@@ -29,7 +29,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "lorem-hipsum": "^0.1.7",
-    "nodemon": "^1.14.11",
+    "nodemon": "^1.18.3",
     "webpack": "^3.10.0"
   }
 }

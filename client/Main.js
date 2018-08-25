@@ -1,10 +1,15 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Stories from './Stories'
+import AllStories from './Stories'
+import {HashRouter, Route} from 'react-router-dom'
+import SingleStory from './SingleStory'
+import Authors from './Authors'
+import SingleAuthor from './SingleAuthor'
 
 export default class Main extends React.Component {
   render () {
     return (
+     <HashRouter>
       <div id='main'>
         <div className='column container'>
           <div id='header'>
@@ -12,8 +17,13 @@ export default class Main extends React.Component {
           </div>
           <Navbar />
         </div>
-        <Stories />
+        <Route exact path='/' component={AllStories}/>
+        <Route exact path='/authors' component={Authors}/>
+        <Route path='/authors/:authorId' component={SingleAuthor}/>
+        <Route exact path='/stories' component={AllStories}/>
+        <Route path='/stories/:storyId' component={SingleStory}/>
       </div>
+      </HashRouter> 
     )
   }
 }
